@@ -9,7 +9,7 @@ WITH top_visits_pizzeria AS (SELECT zz.name    pizzeria_name,
                              LIMIT 3),
      top_orders_pizzeria AS (SELECT zz.name,
                                     count(po.person_id),
-                                    'order'
+                                    'order'  AS action_type
                              FROM person_order po,
                                   menu mn,
                                   pizzeria zz
@@ -20,7 +20,7 @@ WITH top_visits_pizzeria AS (SELECT zz.name    pizzeria_name,
                              LIMIT 3)
 SELECT *
 FROM top_orders_pizzeria
-UNION
+UNION ALL
 SELECT *
 FROM top_visits_pizzeria
 ORDER BY 3, 2 DESC;
