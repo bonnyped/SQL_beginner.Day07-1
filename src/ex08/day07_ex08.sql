@@ -1,6 +1,6 @@
 SELECT p.address,
        zz.name,
-       count(*)
+       count(*) count_of_orders
 FROM person_order po,
      person p,
      menu mn,

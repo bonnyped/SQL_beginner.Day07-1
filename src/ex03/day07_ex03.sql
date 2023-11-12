@@ -19,7 +19,7 @@ WITH top_visits_pizzeria AS (SELECT zz.name          pizzeria_name,
          SELECT *
          FROM top_orders_pizzeria
      )
-SELECT pizzeria_name,
+SELECT pizzeria_name name,
        sum(tap.for_count) total_count
 FROM top_actions_pizzeria tap
      GROUP BY tap.pizzeria_name
